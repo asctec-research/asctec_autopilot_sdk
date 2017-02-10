@@ -1,0 +1,3 @@
+[submodule "deps/asctec_uav_msgs"]
+	path = deps/asctec_uav_msgs
+	url = https://github.com/asctec-research/asctec_uav_msgs.git
