@@ -48,16 +48,16 @@ void SDKInit(void)
 
 void SDKMainloop(void)
 {
-  //write your own C-code within this function
+//  write your own C-code within this function
 
-  //you can select an example by using ONE of the functions below.
-  //CAUTION! Read the code of the examples before you test them on your UAV!
-//  ExampleDirectIndividualMotorCommands(); // checked
-//  ExampleRollPitchYawRateThrustCommands(); // checked
-//  ExampleMotorsOnOff();  // checked
-  ExampleRegularTerminalPrint(); // checked
+//  you can select an example by using ONE of the functions below.
+//  CAUTION! Read the code of the examples before you test them on your UAV!
 
-  ExampleGPSWaypointControl();
+//  ExampleDirectIndividualMotorCommands();
+//  ExampleRollPitchYawRateThrustCommands();
+//  ExampleMotorsOnOff();
+//  ExampleRegularTerminalPrint();
+//  ExampleGPSWaypointControl();
 
   //jeti telemetry can always be activated. You may deactivate this call if you don't use the AscTec Telemetry package.
   SDK_jetiAscTecExampleRun();

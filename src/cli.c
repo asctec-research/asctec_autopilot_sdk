@@ -17,6 +17,7 @@
 #include "terminal.h"
 
 #include "hal/buzzer.h"
+#include "hal/sys_time.h"
 #include "sdkio.h"
 #include <string.h>
 #include <inttypes.h>
@@ -82,8 +83,7 @@ void CLICmdCallback()
 
   if(TerminalCmpCmd("time"))
   {
-//    int64_t time = SysTimeLongUSec();
-//    TerminalPrint("SysTime: %u\r\n", SysTimeUSec());
-//    TerminalPrint("SysTimeLong: %u%010u\r\n", (uint32_t)(time >> 32), (uint32_t)(time & 0xFFFFFFFF));
+    int64_t time = SysTimeLongUSec();
+    TerminalPrint("SysTimeLong: %u%010u\r\n", (uint32_t)(time >> 32), (uint32_t)(time & 0xFFFFFFFF));
   }
 }

@@ -10,10 +10,22 @@ Debian-based distros can use:
 
     sudo apt-get install gcc-arm-none-eabi openocd
     
+You may also need to add a udev rule to gain access to the JTAG adapter with your user via:
+
+    echo 'SUBSYSTEMS=="usb", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="baf8", MODE="0660", GROUP="plugdev"' | sudo tee /etc/udev/rules.d/99-jtag.rules
+    
+Make sure your user is in the `plugdev` group and to restart your computer after adding this rule.
+    
 __Windows__
 
 * For the compiler, please use the installer or corresponding ZIP file, e.g. from [2015-q3 release](http://launchpad.net/gcc-arm-embedded/4.9/4.9-2015-q3-update)
 * Prebuilt binaries of OpenOCD can be found [here](http://github.com/gnuarmeclipse/openocd/releases)  
+* Install WinUSB drivers for the JTAG adapter.
+    * Make sure the JTAG adapter is attached to your computer.
+    * Download Zadig for Windows [here](http://zadig.akeo.ie/). This tool simplifies driver installation.
+    * Start Zadig and select _Options => List All Devices_
+    * In the dropdown list select `USB-JTAG (Interface 0)`
+    * The target driver should be _WinUSB_, click on _Replace Driver_ and wait for the operation to finish.
 
 
 __Eclipse__
@@ -58,6 +70,8 @@ __Result__
 After the build process is finished the program files can be found at _release/run_. Debug files are built at _debug/run_.
 
 ## Flashing
+
+It is a known issue that the first flash/debug operation after the JTAG adapter was powered always fails. Simply execute the corresponding flash/debug operation again to proceed.
 
 __Eclipse__
 

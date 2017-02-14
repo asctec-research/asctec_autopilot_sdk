@@ -335,6 +335,10 @@ void SDKFillLLCommands(struct LL_CONTROL_INPUT* pCtrl)
         sdk.cmd.wpAbsolute.updated = 0;
         sdk.ro.waypoint.navStatus = 0;
       }
+      else
+      {
+    	  pCtrl->ctrl_flags &= 0x00FF;
+      }
     }
     break;
     case SDK_CMD_MODE_GPS_WAYPOINT_REL:
@@ -386,6 +390,10 @@ void SDKFillLLCommands(struct LL_CONTROL_INPUT* pCtrl)
         pCtrl->direct_motor_control[7] = 0;
         sdk.cmd.wpRelative.updated = 0;
         sdk.ro.waypoint.navStatus = 0;
+      }
+      else
+      {
+    	  pCtrl->ctrl_flags &= 0x00FF;
       }
     }
     break;

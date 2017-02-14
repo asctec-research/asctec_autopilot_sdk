@@ -45,12 +45,12 @@ typedef struct _MsgTxConfig
 } MsgTxConfig;
 
 static MsgTxConfig wireCfg[] = {
-  { MESSAGE_ID_IMU,                  &msgImu,                2,   0 },
-  { MESSAGE_ID_VEHICLE_STATUS,       &msgVehicleStatus,      50,  0 },
-  { MESSAGE_ID_RC_DATA,              &msgRcData,             50,  0 },
-  { MESSAGE_ID_MOTOR_STATE,          &msgMotorState,         3,   0 },
-  { MESSAGE_ID_GPS_DATA,             &msgGpsData,            200, 0 },
-  { MESSAGE_ID_FILTERED_SENSOR_DATA, &msgFilteredSensorData, 3,   0 },
+  { MESSAGE_ID_IMU,                  &msgImu,                0, 0 },
+  { MESSAGE_ID_VEHICLE_STATUS,       &msgVehicleStatus,      0, 0 },
+  { MESSAGE_ID_RC_DATA,              &msgRcData,             0, 0 },
+  { MESSAGE_ID_MOTOR_STATE,          &msgMotorState,         0, 0 },
+  { MESSAGE_ID_GPS_DATA,             &msgGpsData,            0, 0 },
+  { MESSAGE_ID_FILTERED_SENSOR_DATA, &msgFilteredSensorData, 0, 0 },
 };
 
 int16_t ExtComSend(void* _pData, uint32_t dataSize)

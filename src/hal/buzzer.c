@@ -302,6 +302,7 @@ void BuzzerHandler(unsigned int vbat, uint8_t gpsLock, uint8_t rcInGPSMode, uint
         buz_active |= BU_INIT;
         I2C1SetRGBLed(0, 0, 255);
       }
+#if __BUILD_CONFIG==0x00
       else if(buz_cnt % 100 < 30)
       {
         buz_active &= ~BU_INIT;
@@ -312,6 +313,7 @@ void BuzzerHandler(unsigned int vbat, uint8_t gpsLock, uint8_t rcInGPSMode, uint
         buz_active |= BU_INIT;
         I2C1SetRGBLed(0, 0, 255);
       }
+#endif
       else
       {
         buz_active &= ~BU_INIT;
