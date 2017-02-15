@@ -200,7 +200,9 @@ static int16_t handleExtMsg(uint8_t* pData, uint32_t dataSize)
 
       for(uint32_t i = 0; i < numParts; i++)
       {
-        uint32_t msgId = *((uint32_t*)pData);
+    	uint32_t lower = *((uint16_t*)pData);
+    	uint32_t upper = *((uint16_t*)(pData+sizeof(uint16_t)));
+        uint32_t msgId = lower | (upper << 16);
         pData += sizeof(uint32_t);
         uint16_t div = *((uint16_t*)pData);
         pData += sizeof(uint16_t);
@@ -210,6 +212,7 @@ static int16_t handleExtMsg(uint8_t* pData, uint32_t dataSize)
           if(wireCfg[i].msgId == msgId)
           {
             wireCfg[i].div = div;
+            break;
           }
         }
       }

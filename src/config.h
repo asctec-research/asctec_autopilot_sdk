@@ -28,8 +28,8 @@
 #define UART0_FUNCTION_COMM     1
 
 // select either a command line terminal on UART0 or a data communication protocol:
-#define UART0_FUNCTION UART0_FUNCTION_TERMINAL
-//#define UART0_FUNCTION UART0_FUNCTION_COMM
+//#define UART0_FUNCTION UART0_FUNCTION_TERMINAL
+#define UART0_FUNCTION UART0_FUNCTION_COMM
 
 // EXT_COM
 #define EXT_COM_MAX_MSG_SIZE 128
