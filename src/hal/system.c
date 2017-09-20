@@ -24,6 +24,7 @@
 #include "uart0.h"
 #include "uart1.h"
 #include "sys_time.h"
+#include "../config.h"
 
 #define EXT_NCS 7   //CS outputs on P0
 
@@ -42,9 +43,8 @@ void init(void)
 
   PLLInit();
   PortsInit();
-//  UART0Initialize(57600);	//debug / command
-  UART0Init(921600); //debug / command
-  UART1Init(115200);	//57600 Servo / GPS, 38400 "indoor GPS"
+  UART0Init(UART0_BAUDRATE);
+  UART1Init(115200);
   SPIInit();
   SSPInit();
   TIM0Init();

@@ -31,6 +31,9 @@
 //#define UART0_FUNCTION UART0_FUNCTION_TERMINAL
 #define UART0_FUNCTION UART0_FUNCTION_COMM
 
+// 921600 is recommended for a wired connection, use 57600 baud when using an XBee
+#define UART0_BAUDRATE 921600
+
 // EXT_COM
 #define EXT_COM_MAX_MSG_SIZE 128
 
